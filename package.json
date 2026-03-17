@@ -1,0 +1,23 @@
+{
+	"name": "appstarter",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "concurrently \"npm run dev -w web\" \"npm run dev -w server\"",
+		"dev:web": "npm run dev -w web",
+		"dev:server": "npm run dev -w server",
+		"lint": "biome lint .",
+		"fix": "biome lint --write . && biome format --write .",
+		"format": "biome format --write ."
+	},
+	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "latest",
+		"@types/node": "latest",
+		"concurrently": "latest"
+	},
+	"workspaces": [
+		"web",
+		"server",
+		"mobile"
+	]
+}
